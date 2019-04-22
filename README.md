@@ -1,6 +1,9 @@
 # rnss
 Better style sheets for React Native
 
+## Installation
+`npm install --save rnss`
+
 ## Usage
 rnss is a wrapper for `StyleSheet.create`. Styles are created in template strings, and rules are separated by new lines or semi colons.
 ```javascript
