@@ -69,6 +69,14 @@ This helper is used to set the `borderWidth`, `borderStyle`, and `borderColor` p
 r`b 1 solid black` // === { borderWidth: 1, borderStyle: 'solid', borderColor: 'black' }
 ```
 
+## Hairline Width
+`hairlineWidth`, `hairline-width`, or `hw` will be replaced by `StyleSheet.hairlineWidth`. So the following are equivalent:
+
+```javascript
+r`border-width ${StyleSheet.hairlineWidth}`
+r`border-width hw`
+```
+
 ## Custom Helpers
 Along side the built in helpers, you can also create your own custom helpers using the `r.helper` function.
 
