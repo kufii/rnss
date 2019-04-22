@@ -1,0 +1,32 @@
+{
+  "name": "rnss",
+  "version": "1.0.0",
+  "description": "Better style sheets for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kufii/rnss.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "stylesheets",
+    "style"
+  ],
+  "author": "Adrien Pyke, Daniel Loomer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kufii/rnss/issues"
+  },
+  "homepage": "https://github.com/kufii/rnss#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-adpyke-es6": "^1.4.6"
+  },
+  "peerDependencies": {
+    "react-native": ">= 0.50.0"
+  }
+}
