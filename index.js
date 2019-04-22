@@ -6,6 +6,10 @@ const initials = str => str.match(/^[a-z]|[A-Z]/g).join('').toLowerCase();
 
 const shorts = props.reduce((obj, prop) => (obj[initials(prop)] = prop, obj), {});
 
+Object.assign(shorts, {
+	fs: 'fontSize'
+});
+
 const zip = (parts, args) => parts.reduce((acc, c, i) => acc + c + (args[i] == null ? '' : args[i]), '');
 
 const memo = (fn, cache = {}) => x => cache[x] || (cache[x] = fn(x));
