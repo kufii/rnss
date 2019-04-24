@@ -7,8 +7,17 @@ const initials = str => str.match(/^[a-z]|[A-Z]/g).join('').toLowerCase();
 const shorts = props.reduce((obj, prop) => (obj[initials(prop)] = prop, obj), {});
 
 Object.assign(shorts, {
+	bc: 'backgroundColor',
+	d: 'display',
+	e: 'elevation',
 	fs: 'fontSize',
-	bc: 'backgroundColor'
+	fw: 'fontWeight',
+	mh: 'minHeight',
+	mw: 'minWidth',
+	o: 'overflow',
+	p: 'padding',
+	so: 'shadowOpacity',
+	t: 'top'
 });
 
 const zip = (parts, args) => parts.reduce((acc, c, i) => acc + c + (args[i] == null ? '' : args[i]), '');
