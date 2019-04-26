@@ -73,7 +73,7 @@ const helpers = {
 	...assignProps(processSides('padding'), 'padding', 'p'),
 	...assignProps(processSides('border', 'Width'), 'borderWidth', 'border-width', 'bw'),
 	...assignProps(processSides('border', 'Radius', cornerDirections), 'borderRadius', 'border-radius', 'br'),
-	...assignProps((width, style, color) => r`bw ${width}; bs ${style}; border-color ${color}`, 'border', 'b')
+	...assignProps((width, style, color) => rnss`bw ${width}; bs ${style}; border-color ${color}`, 'border', 'b')
 };
 
 const createStyle = memo(str => {
