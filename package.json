@@ -1,6 +1,6 @@
 {
   "name": "rnss",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Better style sheets for React Native",
   "main": "index.js",
   "scripts": {
