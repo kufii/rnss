@@ -1,10 +1,10 @@
 {
-	"extends": "adpyke-es6",
-	"env": {
-		"browser": false,
-		"node": true
-	},
-	"parserOptions": {
-		"sourceType": "module"
-	}
+  "extends": ["adpyke-es6", "prettier"],
+  "env": {
+    "browser": false,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  }
 }
