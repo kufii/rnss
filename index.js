@@ -221,16 +221,8 @@ const createStyle = memo(str => {
 });
 
 export default function rnss(parts, ...args) {
-	if (typeof parts === 'string') return StyleSheet.create({ style: createStyle(parts) }).style;
-	else if (Array.isArray(parts))
-		return StyleSheet.create({ style: createStyle(zip(parts, args)) }).style;
-	else if (typeof parts === 'object')
-		return StyleSheet.create(
-			Object.entries(parts).reduce(
-				(obj, [key, value]) => ((obj[key] = createStyle(value)), obj),
-				{}
-			)
-		);
-	return null;
+	return StyleSheet.create({
+		style: createStyle(typeof parts === 'string' ? parts : zip(parts, args))
+	}).style;
 }
 rnss.helper = obj => Object.assign(helpers, obj);

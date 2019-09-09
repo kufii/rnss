@@ -35,17 +35,6 @@ r`flex 1; flexDirection row; backgroundColor #fff`;
 r`f 1; fd row; bc #fff`;
 ```
 
-## Create a StyleSheet
-
-If you want to create a full stylesheet you can use the function version of `r` and pass in an object.
-
-```javascript
-const styles = r({
-	container: `flex 1; flex-direction row`,
-	text: `margin 5; font-weight bold`
-});
-```
-
 ## Helpers
 
 rnss ships with the following css style headers:
