@@ -1,5 +1,14 @@
 import { StyleSheet } from 'react-native';
 
+const isEqual = (a, b) => {
+	if (a === b) return true;
+	if (a == null || b == null) return a == null && b == null;
+	const ak = Object.keys(a);
+	if (ak.length !== Object.keys(b).length) return false;
+	for (const k of ak) if (a[k] !== b[k]) return false;
+	return true;
+};
+
 const props = [
 	'alignContent',
 	'alignItems',
@@ -131,7 +140,11 @@ Object.assign(shorts, {
 const zip = (parts, args) =>
 	parts.reduce((acc, c, i) => acc + c + (args[i] == null ? '' : args[i]), '');
 
-const memo = (fn, cache = {}) => x => cache[x] || (cache[x] = fn(x));
+const memo = (fn, cache = {}) => {
+	const func = x => cache[x] || (cache[x] = fn(x));
+	func.clearCache = () => (cache = {});
+	return func;
+};
 
 const dedash = str => str.replace(/-([a-z])/, (_, value) => value.toUpperCase());
 
@@ -146,8 +159,11 @@ const valueReplacements = {
 	...assignProps(StyleSheet.hairlineWidth, 'hairlineWidth', 'hairline-width', 'hw')
 };
 
+let vars = {};
+
 const processValue = value => {
 	value = value && value.trim();
+	value.startsWith('$') && (value = vars ? vars[value.slice(1)] : null);
 	return valueReplacements[value] || numOrStr(value);
 };
 
@@ -226,3 +242,4 @@ export default function rnss(parts, ...args) {
 	}).style;
 }
 rnss.helper = obj => Object.assign(helpers, obj);
+rnss.vars = v => (!isEqual(vars, v) && createStyle.clearCache(), (vars = v));
