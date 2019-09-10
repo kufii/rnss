@@ -14,12 +14,12 @@ rnss is a wrapper for `StyleSheet.create`. Styles are created in template string
 import r from 'rnss';
 
 const containerStyle = r`
-    flex 1; flex-direction row
-    background-color #fff
-    shadow-opacity {
-        width 4
-        height 5
-    }
+  flex 1; flex-direction row
+  background-color #fff
+  shadow-opacity {
+    width 4
+    height 5
+  }
 `;
 ```
 
@@ -81,10 +81,14 @@ Along side the built in helpers, you can also create your own custom helpers usi
 
 ```javascript
 r.helper({
-	flexRow: `f 1; fd row`,
-	bigMargin: num => r`m ${num * 10}`
+  flexRow: r`f 1; fd row`,
+  bigMargin: num => r`m ${num * 10}`
 });
 
 r`flex-row`; // === { flex: 1, flexDirection: 'row' }
 r`big-margin 5`; // === { margin: 50 }
 ```
+
+## Syntax Highlighting
+
+You can use syntax highlighting in Visual Studio Code by using the [Highlight CSS Lean Strings](https://marketplace.visualstudio.com/items?itemName=fuzetsu.highlight-css-lean-strings) extension.
