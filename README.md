@@ -101,6 +101,14 @@ r`bc $bc`; // === { backgroundColor: '#fff' }
 
 Keep in mind that changing the variables invalidates the current cached styles, so frequent variable updates may cause performance issues.
 
+You can also view all the current defined vars by calling `r.vars` without any parameters.
+
+```javascript
+r.vars({ bc: '#fff' });
+
+r.vars().bc; // === '#fff'
+```
+
 ## Syntax Highlighting
 
 You can use syntax highlighting in Visual Studio Code by using the [Highlight CSS Lean Strings](https://marketplace.visualstudio.com/items?itemName=fuzetsu.highlight-css-lean-strings) extension.

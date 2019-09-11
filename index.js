@@ -242,4 +242,4 @@ export default function rnss(parts, ...args) {
 	}).style;
 }
 rnss.helper = obj => Object.assign(helpers, obj);
-rnss.vars = v => (!isEqual(vars, v) && createStyle.clearCache(), (vars = v));
+rnss.vars = v => (v ? (!isEqual(vars, v) && createStyle.clearCache(), (vars = v)) : vars);
