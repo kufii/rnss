@@ -236,10 +236,12 @@ const createStyle = memo(str => {
 	return style;
 });
 
-export default function rnss(parts, ...args) {
+const rnss = function(parts, ...args) {
 	return StyleSheet.create({
 		style: createStyle(typeof parts === 'string' ? parts : zip(parts, args))
 	}).style;
-}
+};
 rnss.helper = obj => Object.assign(helpers, obj);
 rnss.vars = v => (v ? (!isEqual(vars, v) && createStyle.clearCache(), (vars = v)) : vars);
+
+export default rnss;
