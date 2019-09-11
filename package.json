@@ -4,7 +4,8 @@
   "description": "Better style sheets for React Native",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{js,jsx,md,json,css,prettierrc,eslintrc}\""
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,7 @@
   "devDependencies": {
     "eslint": "^6.3.0",
     "eslint-config-adpyke-es6": "^1.4.12",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.3.0",
     "prettier": "^1.18.2"
   },
   "peerDependencies": {
